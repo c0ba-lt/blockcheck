@@ -15,7 +15,7 @@ export async function getRegions() {
 
 async function computeVideoAvailability({ allowed, blocked }) {
     if (allowed)
-       return allowed;
+       return allowed
 
     const blockedSet = new Set(blocked)
     return (await getRegions())
