@@ -5,5 +5,5 @@
   "type": "module",
   "repository": "git@github.com:c0ba-lt/blockcheck.git",
   "author": "dumbmoron <136796770+dumbmoron@users.noreply.github.com>",
-  "license": "UNLICENSED"
+  "license": "LGPL-3.0"
 }

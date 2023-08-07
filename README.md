@@ -1,4 +1,4 @@
-![blockcheck](logo.jpg)
+![blockcheck](https://gist.githubusercontent.com/dumbmoron/fd5c2e64065c3cdfa6eeaad34a3cc0cc/raw/04db4678d4825b5dad23ce9176a0c6937fd255c6/logo.jpg)
 
 tiny module to check youtube video availability
 
