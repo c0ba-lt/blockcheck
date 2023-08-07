@@ -1,6 +1,6 @@
 {
   "name": "blockcheck",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "index.mjs",
   "type": "module",
   "repository": "git@github.com:c0ba-lt/blockcheck.git",
