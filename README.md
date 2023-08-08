@@ -22,4 +22,8 @@ const regions = await getRegions()
 const result = new Set(await blockcheck('wH0mWVJWyr4'))
 regions.filter(r => !result.has(r)) // ~> ['AE', 'AR', 'AT', ..., 'ZA', 'ZW']
                                          // meaning: blocked worldwide
+
+// checking whether the video is available worldwide
+await blockcheck('l4e_Nba6Bpw').length === await getRegions().length // ~> true
+
 ```
