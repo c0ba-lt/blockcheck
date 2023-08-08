@@ -1,6 +1,7 @@
 {
   "name": "blockcheck",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "tiny module to check youtube video availability",
   "main": "index.mjs",
   "type": "module",
   "repository": "git@github.com:c0ba-lt/blockcheck.git",
