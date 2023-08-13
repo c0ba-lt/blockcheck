@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body { background-color: #111; color: #fff;
+                   margin: 0; padding: 0; font-family: monospace }
+
+            input { width: 50%; margin: 1em; padding: 1em; border: 1px solid #ffffff;
+                    background-color: #222; color: white; font-family: monospace }
+
+            input:focus { outline-width: 0 }
+
+            .mapContainer {  width: 100%; position: fixed }
+
+            #_generated_text { white-space: pre; padding: 1em; margin: 1em; position: absolute;
+                                background-color: rgba(17, 17, 17, 0.5); z-index: 1 }
+        </style>
+        <style id="_generated_css"></style>
+    </head>
+    <body>
+        <input type="text" placeholder="video id/url" id="videoUrl">
+        <div id="_generated_text"></div>
+        <div class="mapContainer"></div>
+        <script type="module" src="web.mjs"></script>
+    </body>
+</html>
