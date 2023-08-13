@@ -1,9 +1,9 @@
 import blockcheck, { getRegions } from './index.mjs'
 import countries from './countries.mjs'
 
-fetch('./map.svg')
-    .then(m => m.text())
-    .then(m => document.querySelector('.mapContainer').innerHTML = m)
+let lock = fetch('./map.svg')
+            .then(m => m.text())
+            .then(m => document.querySelector('.mapContainer').innerHTML = m)
 
 const regions = await getRegions()
 
@@ -51,7 +51,6 @@ function generateText(availability) {
 }
 
 const delay = async ms => new Promise(resolve => setTimeout(resolve, ms))
-let lock = null
 
 async function update() {
     await lock, reset()
