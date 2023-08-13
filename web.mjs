@@ -9,8 +9,7 @@ const regions = await getRegions()
 
 function getId() {
     try {
-        const url = new URL(videoUrl.value);
-        console.log(url, 'youtu.be' === url.hostname, /(\w+.)?youtube.com/i.test(url.hostname))
+        const url = new URL(videoUrl.value)
         if (/(\w+.)?youtube.com/i.test(url.hostname)) 
             return url.searchParams.get('v')
 
@@ -18,7 +17,7 @@ function getId() {
             return url.pathname.slice(1)
     } catch {}
 
-    return videoUrl.value;
+    return videoUrl.value
 }
 
 function countryName(code) {
@@ -52,17 +51,17 @@ function generateText(availability) {
 }
 
 const delay = async ms => new Promise(resolve => setTimeout(resolve, ms))
-let lock = null;
+let lock = null
+
 async function update() {
     await lock, reset()
     const id = getId()
-    console.log(id)
     if (id.length < 10 || id.length > 20)
-        return videoUrl.style.border = '1px solid #fff';
-
+        return videoUrl.style.border = '1px solid #fff'
 
     try {
         const result = await blockcheck(id)
+
         lock = new Promise(async resolve => {
             const rules = [
                 ...result.map(cc => `.${cc.toLowerCase()} { fill: #57b53a !important }`),
@@ -71,18 +70,19 @@ async function update() {
             ].sort(() => 0.5 - Math.random())
 
             while (rules.length) {
-                _generated_css.textContent += rules.pop();
+                _generated_css.textContent += rules.pop()
                 await delay(Math.random() * 10)
             }
 
-            resolve();
+            resolve()
         })
+
         _generated_text.textContent = generateText(result)
-        videoUrl.style.border = '1px solid #00ff00';
+        videoUrl.style.border = '1px solid #00ff00'
     } catch(e) {
-        _generated_text.textContent = 'error: ' + (e.message || e);
-        videoUrl.style.border = '1px solid #ff0000';
+        _generated_text.textContent = 'error: ' + (e.message || e)
+        videoUrl.style.border = '1px solid #ff0000'
     }
 }
 
-videoUrl.oninput = update;
+videoUrl.oninput = update
