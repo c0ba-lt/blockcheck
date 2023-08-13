@@ -34,6 +34,9 @@ function generateText(availability) {
     if (availability.length === regions.length)
         return 'available everywhere'
 
+    if (availability.length === 0)
+        return 'blocked everywhere'
+
     const blockedIn = regions.filter(r => !availability.includes(r))
     if (blockedIn.length < availability.length) {
         return 'available everywhere, except: \n'
